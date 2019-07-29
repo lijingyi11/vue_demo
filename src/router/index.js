@@ -6,6 +6,7 @@ import About from '../views/About'
 import Home from '../views/Home'
 import News from '../views/News'
 import Message from '../views/Messages'
+import MessageDetail from '../views/MessageDetial'
 
 Vue.use(VueRouter)
 //1)定义路由组件
@@ -28,7 +29,13 @@ export default new VueRouter({
           component:News
         },{
           path:'messages',
-          component:Message
+          component:Message,
+          children:[
+            {
+              path:'detail/:id',
+              component:MessageDetail
+            }
+          ]
         },{
           path:'',//默认地址、
           redirect:'/home/news'

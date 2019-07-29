@@ -7,7 +7,10 @@
           <li><router-link to="/home/messages">Message</router-link></li>
         </ul>
       </div>
-      <router-view></router-view>
+      <!--  keep-alive 缓存路由组件对象keep-alive -->
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </div>
 </template>
 

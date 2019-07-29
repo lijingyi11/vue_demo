@@ -1,27 +1,30 @@
 <template>
-  <ul>
-    <li v-for="(msg,index) in message " :key="msg.id">
-      <a href="#">{{msg.title}}</a>
-    </li>
-  </ul>
+  <div>
+    <ul>
+      <li v-for="(msg,index) in message " :key="msg.id">
+      <!--  <a href="`/home/messages/detail/${msg.id}`"></a>-->
+        <router-link :to="`/home/messages/detail/${msg.id}`">{{msg.title}}</router-link>
+      </li>
+    </ul>
+    <hr>
+    <router-view ></router-view>
+  </div>
 </template>
 
 <script>
     export default {
       data(){
         return{
-          message:[
-
-          ]
+          message:[]
         }
       },
       mounted(){
         setTimeout(() => {
           const msgArr =[
-            {id:'01',title:'msg01'},
-            {id:'02',title:'msg02'},
-            {id:'03',title:'msg03'} ,
-            {id:'04',title:'msg04'}
+            {id: 1 ,title:'msg01',content:'11...'},
+            {id:2,title:'msg02',content:'22...'},
+            {id:3,title:'msg03',content:'33...'} ,
+            {id:4,title:'msg04',content:'44...'}
 
           ];
           this.message = msgArr;
