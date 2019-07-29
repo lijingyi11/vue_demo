@@ -1,22 +1,41 @@
 <template>
-  <div class="container">
-    <userSearch/>
-    <userList/>
+  <div>
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-8">
+        <div class="page-header"><h2>Router Test</h2></div>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2">
+        <div class="list-group">
+          <!--生成路由链接-->
+          <router-link to="/about" class="list-group-item">About</router-link>
+          <router-link to="/home" class="list-group-item">Home</router-link>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="panel">
+          <div class="panel-body">
+
+              <router-view ></router-view>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import userSearch from "./users/user_search"
-  import userList from "./users/user_list"
+
     export default {
-      components:{
-        userSearch,
-        userList
-      }
+
     }
 </script>
 
 <style>
-
+  .router-link-active{
+    color: red !important;
+  }
 </style>
